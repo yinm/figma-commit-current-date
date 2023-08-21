@@ -1,0 +1,31 @@
+<!-- TODO: update styles -->
+<p>
+  <label for="title">Title</label>
+  <input id="title" type="text" placeholder="update for some features" style="width: 100%;" />
+</p>
+<p>
+  <label for="reference-url">Reference URL</label>
+  <input id="reference-url" type="text" placeholder="https://example.com" style="width: 100%;" />
+</p>
+<button type="button">Submit</button>
+<p id="error-message" style="color: tomato;"></p>
+<script>
+  document.querySelector('button').onclick = () => {
+    const title = document.querySelector('#title').value
+    const referenceUrl = document.querySelector('#reference-url').value
+
+    // TODO: update rigorous validation
+    if (title.trim() === '') {
+      document.querySelector('#error-message').textContent = 'Error: Require title value.'
+      return
+    }
+    document.querySelector('#error-message').textContent = ''
+
+    parent.postMessage({
+      pluginMessage: {
+        title,
+        referenceUrl
+      }
+    }, '*')
+  }
+</script>

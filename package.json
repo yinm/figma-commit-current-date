@@ -1,0 +1,16 @@
+{
+  "name": "commit-current-date",
+  "version": "1.0.0",
+  "description": "update text node to current date and commit version history.",
+  "main": "code.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "watch": "npm run build -- --watch"
+  },
+  "author": "yinm",
+  "license": "MIT",
+  "devDependencies": {
+    "@figma/plugin-typings": "^1.74.0",
+    "typescript": "^5.1.6"
+  }
+}
